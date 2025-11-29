@@ -1,0 +1,24 @@
+:root{--bg:#f4f6f8;--accent:#2b3a67;--accent-2:#f2b632;--muted:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:#111}
+.header{background:linear-gradient(180deg,#1b264b 0%, #0f1a3b 100%);color:#fff;padding:22px 18px;display:flex;align-items:center;gap:16px}
+.logo-block{display:flex;flex-direction:column}
+.logo-title{font-weight:800;letter-spacing:1px;font-size:22px}
+.logo-sub{font-size:11px;text-transform:uppercase;color:var(--accent-2);margin-top:2px}
+.container{max-width:1000px;margin:26px auto;padding:20px}
+.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(15,23,42,0.06);margin-bottom:18px}
+.form-row{display:flex;gap:12px;flex-wrap:wrap}
+.input,select,button,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ee;font-size:15px}
+.input,select,textarea{flex:1 1 220px}
+.button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+.small{font-size:13px;color:var(--muted)}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px;border-bottom:1px solid #eef2ff;text-align:left}
+.table th{background:#fbfdff}
+.badge{display:inline-block;padding:6px 8px;border-radius:8px;font-weight:600}
+.badge-confirm{background:#e6fff2;color:#0a8b56}
+.badge-pending{background:#fff7e6;color:#b06b00}
+.report-day{border:2px solid #e6eefb;padding:12px;border-radius:10px;margin-bottom:12px}
+.center{text-align:center}
+.footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+@media (max-width:800px){.form-row{flex-direction:column}}

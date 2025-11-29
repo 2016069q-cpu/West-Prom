@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WestProm — Отчёты</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:#d1d5db;border-radius:8px">
+      <svg width="48" height="48" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" fill="#d1d5db"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Impact, Arial" font-size="46" fill="#3b3b3b">W</text>
+      </svg>
+    </div>
+    <div class="logo-block">
+      <div class="logo-title">WESTPROM</div>
+      <div class="logo-sub">BUILD &amp; INDUSTRY</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Ежедневные отчёты</h2>
+      <div id="reportsContainer"></div>
+    </section>
+
+    <section class="card">
+      <h2>Месячная таблица человеко-дней</h2>
+      <div id="monthly"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="reports.js"></script>
+</body>
+</html>

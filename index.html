@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WestProm — Отметка посещения</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:#d1d5db;border-radius:8px">
+      <!-- текстовый логотип в стиле "бетон" -->
+      <svg width="48" height="48" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" fill="#d1d5db"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Impact, Arial" font-size="46" fill="#3b3b3b">W</text>
+      </svg>
+    </div>
+    <div class="logo-block">
+      <div class="logo-title">WESTPROM</div>
+      <div class="logo-sub">BUILD &amp; INDUSTRY</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Отметить посещение</h2>
+      <div class="form-row" style="margin-top:12px">
+        <input id="fullname" class="input" placeholder="Имя и фамилия" aria-label="Имя и фамилия">
+        <div style="min-width:160px">
+          <select id="type" class="input">
+            <option value="daily">Ежедневная оплата</option>
+            <option value="deal">Сделка</option>
+          </select>
+        </div>
+        <div style="min-width:150px">
+          <select id="workers" class="input">
+            <!-- 1..20 -->
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+        <button class="button" id="sendBtn">Отметить</button>
+        <div class="small">Имя сохраняется в браузере — вводить каждый раз не нужно.</div>
+      </div>
+      <p id="status" class="small" style="margin-top:8px"></p>
+    </section>
+
+    <section class="card">
+      <h3>Информация</h3>
+      <p class="small">Если тип "Сделка" — запись фиксируется, но не учитывается в человеко-днях.</p>
+    </section>
+
+    <div class="card center">
+      <a href="admin.html">Перейти в админ-панель</a> | <a href="reports.html">Отчёты</a>
+    </div>
+
+  </main>
+  <footer class="footer">© WESTPROM — Учёт посещаемости</footer>
+
+  <script src="config.js"></script>
+  <script>
+    // populate workers 1..20
+    const sel = document.getElementById('workers');
+    for(let i=1;i<=20;i++){
+      const opt = document.createElement('option');
+      opt.value = i; opt.textContent = i + (i===1? ' (один)':'');
+      sel.appendChild(opt);
+    }
+  </script>
+  <script src="worker.js"></script>
+</body>
+</html>
