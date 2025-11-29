@@ -19,7 +19,15 @@
     // правила: если type === 'deal' -> days = 0
     const days = type === 'deal' ? 0 : workers;
 
-    const payload = { fullname, type, workers, days };
+    const payload = {
+  id: Date.now(), // УНИКАЛЬНЫЙ ID
+  date: new Date().toISOString(),
+  fullname,
+  type,
+  workers: Number(workers),
+  days: Number(workers), 
+  confirmed: false
+};
 
     // сохранить имя локально
     localStorage.setItem('westprom_fullname', fullname);
