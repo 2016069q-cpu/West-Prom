@@ -1,3 +1,4 @@
+// worker.js (Исправленная версия)
 // логика отправки отметки (клиент)
 (function(){
   const fullnameEl = document.getElementById('fullname');
@@ -20,12 +21,12 @@
     const days = type === 'deal' ? 0 : workers;
 
     const payload = {
-  id: Date.now(), // УНИКАЛЬНЫЙ ID
+  id: Date.now(), // УНИКАЛЬНЫЙ ID (для потенциального использования на сервере)
   date: new Date().toISOString(),
   fullname,
   type,
   workers: Number(workers),
-  days: Number(workers), 
+  days: days, // ИСПРАВЛЕНО: используем переменную days, которая может быть 0
   confirmed: false
 };
 
@@ -34,9 +35,10 @@
 
     status.textContent = 'Отправка...';
     try{
-      await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+      // Убрано mode:'no-cors', чтобы получать статус ответа
+      await fetch(SCRIPT_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
       status.textContent = 'Отмечено';
-      setTimeout(()=>status.textContent='');
+      setTimeout(()=>status.textContent='', 2000);
     }catch(e){
       console.error(e);
       status.textContent = 'Ошибка отправки';
