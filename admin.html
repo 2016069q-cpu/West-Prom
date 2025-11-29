@@ -16,34 +16,59 @@
     </div>
     <div class="logo-block">
       <div class="logo-title">WESTPROM</div>
-      <div class="logo-sub">BUILD &amp; INDUSTRY</div>
+      <div class="logo-sub">BUILD & INDUSTRY</div>
     </div>
   </header>
 
   <main class="container">
-    <section class="card">
-      <h2>Вход администратора</h2>
-      <div style="display:flex;gap:8px;align-items:center">
-        <input id="adminPass" class="input" type="password" placeholder="Пароль администратора">
-        <button id="loginBtn" class="button">Войти</button>
-      </div>
-      <p id="loginStatus" class="small"></p>
-    </section>
 
-    <section id="panel" class="card" style="display:none">
+    <!-- ВХОД -->
+    <section id="loginSection" class="card login-mobile">
+  <div class="login-logo">
+    <svg width="72" height="72" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="200" height="200" fill="#d1d5db"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Impact, Arial" font-size="60" fill="#3b3b3b">W</text>
+    </svg>
+    <div class="login-title">WESTPROM</div>
+    <div class="login-sub">ADMIN PANEL</div>
+  </div>
+
+  <input id="adminPass" class="input login-input" type="password" placeholder="Пароль администратора">
+
+  <button id="loginBtn" class="button login-btn">Войти</button>
+
+  <p id="loginStatus" class="login-status"></p>
+</section>
+
+
+    <!-- АДМИН-ПАНЕЛЬ -->
+    <section id="adminSection" class="card" style="display:none">
       <h2>Отметки — черновики</h2>
       <div style="margin-bottom:8px;display:flex;gap:8px;align-items:center">
         <button id="refreshBtn" class="button">Обновить</button>
         <button id="confirmSelected" class="button">Подтвердить выделенные</button>
         <button id="closeDay" class="button">Закрыть день (создать отчёт)</button>
       </div>
+
       <table class="table" id="dataTable">
-        <thead><tr><th><input type="checkbox" id="selectAll"></th><th>Дата</th><th>Имя</th><th>Тип</th><th>Людей</th><th>Дн.</th><th>Подтверждено</th></tr></thead>
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="selectAll"></th>
+            <th>Дата</th>
+            <th>Имя</th>
+            <th>Тип</th>
+            <th>Людей</th>
+            <th>Дн.</th>
+            <th>Подтверждено</th>
+          </tr>
+        </thead>
         <tbody></tbody>
       </table>
     </section>
 
   </main>
+
   <footer class="footer">© WESTPROM</footer>
 
   <script src="config.js"></script>
