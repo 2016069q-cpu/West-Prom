@@ -22,3 +22,66 @@ body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);
 .center{text-align:center}
 .footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
 @media (max-width:800px){.form-row{flex-direction:column}}
+/* ──────────────── МОБИЛЬНАЯ ВЕРСИЯ ВХОДА ──────────────── */
+
+.login-mobile {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+  border-radius: 18px;
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 10px;
+  color: #333;
+}
+
+.login-sub {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-top: -4px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.login-status {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #b00000;
+}
+
+/* Улучшение на мобильных экранах */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 20px !important;
+  }
+}
