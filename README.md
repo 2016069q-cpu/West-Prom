@@ -14,7 +14,7 @@ WestProm — сайт учёта посещаемости
 Шаги развёртывания:
 1) Создать Google Sheet с именем "WestProm Attendance" и листами: `data` и `reports`.
    В листе `data` первая строка (заголовки):
-   date | fullname | type | workers | days | confirmed
+   id | date | fullname | type | workers | days | confirmed
 2) Вставить google_script.gs в Apps Script, Deploy → New deployment → Web app → Execute as: Me, Who has access: Anyone
 3) Скопировать полученный Web App URL (оканчивается на /exec) и убедиться, что он совпадает с config.js (файл уже содержит URL, который ты дал).
 4) Залить файлы на GitHub Pages или любой статический хостинг.
